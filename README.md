@@ -1,4 +1,4 @@
-# Snake Game v2
+# VIPER — The Snake Game & Framework
 
 A complete rebuild of the classic Snake Game with 50 levels, economy, login system, social features, and full developer configuration. Runs on iOS, Android, Web, and Desktop via any modern browser.
 
@@ -36,6 +36,11 @@ All game parameters are editable in `js/Config.js`:
 - Authentication rules
 - Social features limits
 
+### Legal & Governance
+- **AGPLv3 License** — open-source with commercial dual-license option
+- **CLA Enforcement** — all contributors grant commercial usage rights
+- **Copyright Notice** — every source file carries the dual-license header
+
 ### Other Features
 - Splash screen with animated logo
 - First-time player tutorial
@@ -63,7 +68,10 @@ snake-game/
 ├── css/style.css           # Complete styles
 ├── manifest.json           # PWA manifest
 ├── sw.js                   # Service Worker
-├── README.md               # This file
+  ├── LICENSE                 # AGPLv3 + dual-license terms
+  ├── CONTRIBUTING.md         # Contribution guide + CLA
+  ├── CODE_OF_CONDUCT.md      # Community standards
+  ├── README.md               # This file
 ├── js/
 │   ├── Config.js           # Developer configuration hub
 │   ├── Database.js         # Storage + Auth system
@@ -118,6 +126,11 @@ Chrome, Firefox, Safari (14+), Edge, iOS Safari, Android Chrome — all fully su
 
 ## Version History
 
+**v2.1.0** — Legal & governance
+- AGPLv3 dual-license architecture with CLA
+- VIPER branding and license headers on all source files
+- Contributor License Agreement in CONTRIBUTING.md
+
 **v2.0.0** — Complete rebuild
 - 50 level progression with difficulty scaling
 - Login system with unique IDs
@@ -133,4 +146,16 @@ Chrome, Firefox, Safari (14+), Edge, iOS Safari, Android Chrome — all fully su
 
 ## License
 
-MIT
+**GNU Affero General Public License v3.0** with Dual-Licensing Exception.
+
+Copyright (C) 2026 **Joel Jais**. All rights reserved.
+
+This program is free software: you can redistribute it and/or modify it under the terms of the GNU Affero General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+**Dual-License Notice:** The copyright holder (Joel Jais) reserves the right to distribute this software under alternative commercial, proprietary, or closed-source licenses for deployment in centralized applications, app stores, or commercial platforms.
+
+**Contributor License Agreement (CLA):** By submitting a Pull Request, contributors grant Joel Jais a non-exclusive, perpetual, royalty-free, worldwide, transferable license to use their contributed code in any future version, including commercial deployments.
+
+Unauthorized publishing, hosting, redistribution, or commercial use without explicit written permission from the copyright holder is strictly prohibited.
+
+See the [LICENSE](./LICENSE) file for full terms.
