@@ -1,3 +1,4 @@
+/* Snake Game — Proprietary License. See LICENSE for full terms. */
 :root{--bg:#0a0a1a;--bg2:#12122a;--card:#1a1a3a;--text:#e0e0ff;--text2:#8888bb;--text3:#555577;--accent:#00ff88;--accent2:#ff6b6b;--accent3:#ffd93d;--accent4:#6bcbff;--border:#2a2a4a;--rad:12px;--rads:8px;--trans:0.2s ease;--font:'Segoe UI',-apple-system,BlinkMacSystemFont,Roboto,sans-serif}
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html,body{width:100%;height:100%;overflow:hidden;background:var(--bg);color:var(--text);font-family:var(--font);user-select:none;-webkit-user-select:none;touch-action:none}

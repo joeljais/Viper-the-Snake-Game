@@ -1,3 +1,4 @@
+/* Snake Game — Proprietary License. See LICENSE for full terms. */
 class Splash {
   constructor() {
     this.element = document.getElementById('splashScreen');

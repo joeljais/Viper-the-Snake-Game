@@ -1,3 +1,4 @@
+/* Snake Game — Proprietary License. See LICENSE for full terms. */
 class Economy {
   static getCoins() {
     const p = Auth.getProfile();

@@ -1,3 +1,4 @@
+/* Snake Game — Proprietary License. See LICENSE for full terms. */
 class Input {
   constructor() {
     this.directionQueue = [];

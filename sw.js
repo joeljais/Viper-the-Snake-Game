@@ -1,3 +1,4 @@
+/* Snake Game — Proprietary License. See LICENSE for full terms. */
 const CACHE='snake-v2';
 const FILES=['/','/index.html','/css/style.css','/manifest.json',
   '/js/Config.js','/js/Database.js','/js/Input.js','/js/Snake.js','/js/Food.js',

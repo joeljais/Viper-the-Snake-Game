@@ -1,3 +1,4 @@
+/* Snake Game — Proprietary License. See LICENSE for full terms. */
 class Audio {
   constructor() {
     this.ctx = null;

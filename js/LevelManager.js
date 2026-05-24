@@ -1,3 +1,4 @@
+/* Snake Game — Proprietary License. See LICENSE for full terms. */
 class LevelManager {
   constructor() {
     this.cfg = window.SNAKE_CONFIG.levels;

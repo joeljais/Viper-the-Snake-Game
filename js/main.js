@@ -1,3 +1,4 @@
+/* Snake Game — Proprietary License. See LICENSE for full terms. */
 (function () {
   const canvas = document.getElementById('gameCanvas');
   const themeMgr = new ThemeManager();

@@ -1,3 +1,4 @@
+/* Snake Game — Proprietary License. See LICENSE for full terms. */
 window.SNAKE_CONFIG = {
   version: '2.0.0',
   debug: false,

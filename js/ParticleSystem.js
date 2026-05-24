@@ -1,3 +1,4 @@
+/* Snake Game — Proprietary License. See LICENSE for full terms. */
 class Particle {
   constructor(x, y, vx, vy, color, size, life) {
     this.x = x; this.y = y;

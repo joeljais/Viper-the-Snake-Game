@@ -1,3 +1,4 @@
+/* Snake Game — Proprietary License. See LICENSE for full terms. */
 class Renderer {
   constructor(canvas, themeMgr) {
     this.canvas = canvas;

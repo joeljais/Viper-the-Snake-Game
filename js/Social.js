@@ -1,3 +1,4 @@
+/* Snake Game — Proprietary License. See LICENSE for full terms. */
 class Social {
   static MESSAGES_KEY = 'chat_messages';
   static WALL_KEY = 'dev_wall_posts';
