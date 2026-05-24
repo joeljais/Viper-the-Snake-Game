@@ -1,4 +1,29 @@
-/* Snake Game — Proprietary License. See LICENSE for full terms. */
+/**
+ * ═══════════════════════════════════════════════════════════════════════════
+ *  VIPER: THE SNAKE GAME & FRAMEWORK
+ * ═══════════════════════════════════════════════════════════════════════════
+ *  Copyright (C) 2026 Joel Jais. All rights reserved.
+ *
+ *  LICENSING TERMS:
+ *  This program is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU Affero General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ *  GNU Affero General Public License for more details.
+ *
+ *  DUAL-LICENSE NOTICE:
+ *  The copyright holder (Joel Jais) reserves the right to distribute this
+ *  software under alternative commercial, proprietary, or closed-source
+ *  licenses for deployment in centralized applications, app stores, or
+ *  commercial platforms.
+ *
+ *  Full License Text: <https://www.gnu.org/licenses/agpl-3.0.txt>
+ * ═══════════════════════════════════════════════════════════════════════════
+ */
 :root{--bg:#0a0a1a;--bg2:#12122a;--card:#1a1a3a;--text:#e0e0ff;--text2:#8888bb;--text3:#555577;--accent:#00ff88;--accent2:#ff6b6b;--accent3:#ffd93d;--accent4:#6bcbff;--border:#2a2a4a;--rad:12px;--rads:8px;--trans:0.2s ease;--font:'Segoe UI',-apple-system,BlinkMacSystemFont,Roboto,sans-serif}
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html,body{width:100%;height:100%;overflow:hidden;background:var(--bg);color:var(--text);font-family:var(--font);user-select:none;-webkit-user-select:none;touch-action:none}

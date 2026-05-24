@@ -55,3 +55,11 @@ snake-game/
 ## Questions?
 
 Open a discussion in the Issues tab or reach out to the maintainers.
+
+---
+
+## ⚖️ Contributor License Agreement (CLA)
+
+By submitting a Pull Request to this project, you grant **Joel Jais** a non-exclusive, perpetual, royalty-free, worldwide, transferable license to use, copy, modify, distribute, and sublicense your contributed code in any future version of the software, including commercial, closed-source, or proprietary deployments, without compensation or attribution restrictions.
+
+You retain the copyright to your code, but you give us the full freedom to deploy and monetize the framework globally.

@@ -1,21 +1,30 @@
-SNAKE GAME — PROPRIETARY LICENSE
-Copyright (c) 2026 Joel. All rights reserved.
+                    GNU AFFERO GENERAL PUBLIC LICENSE
+                       Version 3, 19 November 2007
 
-This software and its associated source code, documentation, and assets
-(collectively, the "Software") are the exclusive property of Joel.
+ Copyright (C) 2026 Joel Jais. All rights reserved.
 
-Permission is hereby denied to any person or entity to copy, modify,
-merge, publish, distribute, sublicense, sell, or create derivative works
-of the Software, in whole or in part, without the prior written consent
-of the copyright holder.
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU Affero General Public License as published
+ by the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
 
-The Software is provided "AS IS", without warranty of any kind, express
-or implied, including but not limited to the warranties of merchantability,
-fitness for a particular purpose, and noninfringement.  In no event shall
-the copyright holder be liable for any claim, damages, or other liability
-arising from the use of the Software.
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU Affero General Public License for more details.
 
-Unauthorized publishing, hosting, redistribution, or commercial use of
-this Software is strictly prohibited and may result in legal action.
+ You should have received a copy of the GNU Affero General Public License
+ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-For licensing inquiries, contact: your.email@example.com
+-----------------------------------------------------------------------------
+                     DUAL-LICENSE & COMMERCIAL NOTICE
+-----------------------------------------------------------------------------
+ The copyright holder (Joel Jais) reserves the right to distribute this
+ software under alternative commercial, proprietary, or closed-source
+ licenses for deployment in centralized applications, app stores, or
+ commercial platforms.
+
+ For licensing inquiries regarding commercial use, please contact:
+ your.email@example.com
+
+ Full AGPLv3 text: https://www.gnu.org/licenses/agpl-3.0.txt
