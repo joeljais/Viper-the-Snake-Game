@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+  <meta name="theme-color" content="#0a0a1a">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="description" content="Snake Game - Classic. Evolved. 50 levels of challenges.">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+  <link rel="icon" type="image/png" href="assets/icons/icon-192.png">
+  <title>Snake Game</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="app">
+
+  <!-- SPLASH -->
+  <div id="splashScreen" class="screen">
+    <canvas id="splashCanvas"></canvas>
+  </div>
+
+  <!-- LOGIN -->
+  <div id="loginScreen" class="screen hidden">
+    <div class="menu-container">
+      <h1 class="game-title">Snake</h1>
+      <p class="game-subtitle">Login to start your journey</p>
+      <div class="form-group">
+        <input type="text" id="loginUser" class="form-input" placeholder="Username" autocomplete="off" maxlength="20">
+      </div>
+      <div class="form-group">
+        <input type="password" id="loginPass" class="form-input" placeholder="Password" maxlength="50">
+      </div>
+      <div id="loginError" class="form-error hidden"></div>
+      <div class="menu-buttons">
+        <button class="btn btn-primary" data-action="doLogin">Login</button>
+        <button class="btn btn-secondary" data-action="doRegister">Register</button>
+        <button class="btn btn-back" data-action="guestLogin">Play as Guest</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN MENU -->
+  <div id="mainMenu" class="screen hidden">
+    <div class="menu-container">
+      <h1 class="game-title">Snake</h1>
+      <p class="game-subtitle">Classic. Evolved.</p>
+      <div class="user-badge" id="mainUserBadge">Player</div>
+      <div class="user-coins" id="mainUserCoins">🪙 0</div>
+      <div class="menu-buttons">
+        <button class="btn btn-primary" data-action="showLevels">Play</button>
+        <button class="btn btn-secondary" data-action="showStore">Store</button>
+        <button class="btn btn-secondary" data-action="showSocial">Social</button>
+        <button class="btn btn-secondary" data-action="showSettings">Settings</button>
+        <button class="btn btn-secondary" data-action="showRelease">Release Notes</button>
+        <button class="btn btn-secondary" data-action="showPrivacy">Privacy & Policy</button>
+        <button class="btn btn-back" data-action="logout">Logout</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- LEVEL SELECT -->
+  <div id="levelSelect" class="screen hidden">
+    <div class="menu-container">
+      <h2 class="screen-title">Select Level</h2>
+      <div id="levelGrid" class="level-grid"></div>
+      <div class="menu-buttons">
+        <button class="btn btn-back" data-action="showMain">Back</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- STORE -->
+  <div id="storeScreen" class="screen hidden">
+    <div class="menu-container">
+      <h2 class="screen-title">Store</h2>
+      <div class="store-balance">Your Coins: <span id="storeCoins">0</span> 🪙</div>
+      <div id="storeGrid" class="store-grid"></div>
+      <div class="menu-buttons">
+        <button class="btn btn-back" data-action="showMain">Back</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SOCIAL -->
+  <div id="socialScreen" class="screen hidden">
+    <div class="menu-container">
+      <h2 class="screen-title">Social</h2>
+      <div class="tabs">
+        <button class="tab tab-active" id="chatTab" data-action="showTab" data-param="chat">World Chat</button>
+        <button class="tab" id="devTab" data-action="showTab" data-param="dev">Dev Wall</button>
+      </div>
+      <div id="chatPanel" class="social-panel">
+        <div id="chatMessages" class="social-msgs"></div>
+        <div class="social-input-row">
+          <input type="text" id="chatInput" class="form-input" placeholder="Type a message..." maxlength="200">
+          <button class="btn btn-sm btn-primary" data-action="sendChat">Send</button>
+        </div>
+      </div>
+      <div id="devPanel" class="social-panel hidden">
+        <div id="devWallPosts" class="social-msgs"></div>
+        <div class="social-input-row">
+          <input type="text" id="devWallInput" class="form-input" placeholder="Share your feedback..." maxlength="200">
+          <select id="devWallRating" class="form-select">
+            <option value="5">⭐⭐⭐⭐⭐</option><option value="4">⭐⭐⭐⭐</option><option value="3">⭐⭐⭐</option><option value="2">⭐⭐</option><option value="1">⭐</option>
+          </select>
+          <button class="btn btn-sm btn-primary" data-action="postDevWall">Post</button>
+        </div>
+      </div>
+      <div class="menu-buttons">
+        <button class="btn btn-back" data-action="showMain">Back</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SETTINGS -->
+  <div id="settingsScreen" class="screen hidden">
+    <div class="menu-container">
+      <h2 class="screen-title">Settings</h2>
+      <div class="settings-info">
+        <span id="settingsUser">Player</span> | <span id="settingsLevel">Level 1</span> | <span id="settingsCoins">🪙 0</span>
+      </div>
+      <div class="settings-group"><h3>Sound</h3>
+        <label class="toggle-row"><span>Sound Effects</span><input type="checkbox" id="setSound"><span class="toggle-slider"></span></label>
+        <label class="toggle-row"><span>Music</span><input type="checkbox" id="setMusic"><span class="toggle-slider"></span></label>
+      </div>
+      <div class="settings-group"><h3>Display</h3>
+        <label class="toggle-row"><span>Show Grid</span><input type="checkbox" id="setGrid"><span class="toggle-slider"></span></label>
+        <label class="toggle-row"><span>Particles</span><input type="checkbox" id="setParticles"><span class="toggle-slider"></span></label>
+        <label class="toggle-row"><span>Animations</span><input type="checkbox" id="setAnim"><span class="toggle-slider"></span></label>
+      </div>
+      <div class="settings-group"><h3>Controls</h3>
+        <label class="toggle-row"><span>Touch Controls</span><input type="checkbox" id="setTouch"><span class="toggle-slider"></span></label>
+        <label class="toggle-row"><span>Vibration</span><input type="checkbox" id="setVibrate"><span class="toggle-slider"></span></label>
+      </div>
+      <div class="settings-group"><h3>Themes</h3><div id="themeGrid" class="theme-grid"></div></div>
+      <div class="menu-buttons">
+        <button class="btn btn-back" data-action="showMain">Back</button>
+        <button class="btn btn-back" data-action="resetData" style="color:#ff6b6b">Reset All Data</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRIVACY -->
+  <div id="privacyScreen" class="screen hidden">
+    <div class="menu-container">
+      <h2 class="screen-title">Privacy & Policy</h2>
+      <div class="text-content">
+        <p><strong>Data Storage:</strong> All game data is stored locally on your device using localStorage. No data is transmitted to any server.</p>
+        <p><strong>Account Security:</strong> Passwords are hashed before storage. However, since data is stored locally, treat this as a casual game — do not use sensitive passwords.</p>
+        <p><strong>Chat:</strong> World chat messages are stored locally and visible only to you. In a production version, messages would be moderated.</p>
+        <p><strong>Cookies:</strong> This game does not use cookies or tracking.</p>
+        <p><strong>Third Parties:</strong> No third-party services collect your data.</p>
+        <p><strong>Data Deletion:</strong> Use "Reset All Data" in Settings to delete all stored data.</p>
+        <p><em>Last updated: May 2026</em></p>
+      </div>
+      <div class="menu-buttons"><button class="btn btn-back" data-action="showMain">Back</button></div>
+    </div>
+  </div>
+
+  <!-- RELEASE NOTES -->
+  <div id="releaseScreen" class="screen hidden">
+    <div class="menu-container">
+      <h2 class="screen-title">Release Notes</h2>
+      <div class="text-content">
+        <h3>Version 2.0.0</h3>
+        <ul>
+          <li>Complete game rebuild with 50 levels of progressive difficulty</li>
+          <li>New login system with unique player IDs</li>
+          <li>Coin economy with store, rewards, and unlockable content</li>
+          <li>5 food types (Normal, Golden, Speed, Slow, Rainbow)</li>
+          <li>6 visual themes (Dark, Classic, Neon, Ocean, Sunset, Candy)</li>
+          <li>World Chat and Developer Feedback Wall</li>
+          <li>Interactive tutorial for new players</li>
+          <li>Smooth splash screen with animated logo</li>
+          <li>Developer configuration system (Config.js)</li>
+          <li>Enhanced touch controls and gamepad support</li>
+          <li>PWA support with offline caching</li>
+          <li>Fixed grid boundary and control responsiveness</li>
+          <li>Privacy Policy and Release Notes built-in</li>
+        </ul>
+        <h3>Version 1.0.0</h3>
+        <ul>
+          <li>Initial release with classic snake gameplay</li>
+          <li>6 game modes (Classic, Wrap, Obstacles, Maze, Timed, Zen)</li>
+          <li>Achievement system with 15 achievements</li>
+          <li>Particle effects and animated rendering</li>
+        </ul>
+      </div>
+      <div class="menu-buttons"><button class="btn btn-back" data-action="showMain">Back</button></div>
+    </div>
+  </div>
+
+  <!-- GAME CANVAS -->
+  <canvas id="gameCanvas"></canvas>
+
+  <!-- HUD -->
+  <div id="hud" class="hidden">
+    <div class="hud-top">
+      <div class="hud-item"><span class="hud-lbl">Score</span><span id="hudScore" class="hud-val">0</span></div>
+      <div class="hud-item"><span class="hud-lbl">Target</span><span id="hudTarget" class="hud-val">50</span></div>
+      <div class="hud-item"><span class="hud-lbl">Level</span><span id="hudLevel" class="hud-val">1</span></div>
+      <div class="hud-item"><span class="hud-lbl">Length</span><span id="hudLength" class="hud-val">3</span></div>
+    </div>
+  </div>
+
+  <!-- TOUCH CONTROLS -->
+  <div id="touchControls" class="hidden">
+    <button id="btnUp" class="tbtn tup">▲</button>
+    <button id="btnDown" class="tbtn tdown">▼</button>
+    <button id="btnLeft" class="tbtn tleft">◀</button>
+    <button id="btnRight" class="tbtn tright">▶</button>
+    <button id="btnPause" class="tbtn tpause">⏸</button>
+  </div>
+
+  <!-- PAUSE OVERLAY -->
+  <div id="pauseOverlay" class="overlay hidden">
+    <div class="overlay-content"><h2>Paused</h2>
+      <div class="menu-buttons">
+        <button class="btn btn-primary" data-action="resume">Resume</button>
+        <button class="btn btn-secondary" data-action="restart">Restart</button>
+        <button class="btn btn-back" data-action="quit">Quit</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- GAME OVER OVERLAY -->
+  <div id="gameOverOverlay" class="overlay hidden">
+    <div class="overlay-content">
+      <h2 id="goReason" style="color:#ff6b6b">Game Over</h2>
+      <div class="go-stats">
+        <div class="go-stat"><span class="go-lbl">Score</span><span id="goScore" class="go-val">0</span></div>
+        <div class="go-stat"><span class="go-lbl">Length</span><span id="goLength" class="go-val">3</span></div>
+        <div class="go-stat"><span class="go-lbl">Time</span><span id="goTime" class="go-val">0:00</span></div>
+      </div>
+      <div class="menu-buttons">
+        <button class="btn btn-primary" data-action="restart">Retry</button>
+        <button class="btn btn-back" data-action="showLevels">Levels</button>
+        <button class="btn btn-back" data-action="quit">Menu</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- LEVEL COMPLETE OVERLAY -->
+  <div id="levelCompleteOverlay" class="overlay hidden">
+    <div class="overlay-content">
+      <h2 id="lcLevel" style="color:#00ff88">Level Complete!</h2>
+      <div class="go-stats">
+        <div class="go-stat"><span class="go-lbl">Score</span><span id="lcScore" class="go-val">0</span></div>
+        <div class="go-stat"><span class="go-lbl">Length</span><span id="lcLength" class="go-val">3</span></div>
+        <div class="go-stat"><span class="go-lbl">Time</span><span id="lcTime" class="go-val">0:00</span></div>
+      </div>
+      <div id="lcCoins" class="lc-coins hidden">+0 coins</div>
+      <div id="lcRewards" class="lc-rewards"></div>
+      <div class="menu-buttons">
+        <button class="btn btn-primary" id="btnNextLevel" data-action="nextLevel">Next Level</button>
+        <button class="btn btn-back" data-action="showLevels">Levels</button>
+        <button class="btn btn-back" data-action="quit">Menu</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TUTORIAL OVERLAY -->
+  <div id="tutorialOverlay" class="overlay hidden">
+    <div class="overlay-content tutorial-box">
+      <h2 id="tutorialTitle" class="screen-title">Welcome</h2>
+      <p id="tutorialText" class="tutorial-text">Content</p>
+      <div class="tutorial-footer">
+        <span id="tutorialProgress" class="tutorial-progress">1 / 8</span>
+        <button id="tutorialBtn" class="btn btn-primary">Next</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+<script src="js/Config.js"></script>
+<script src="js/Database.js"></script>
+<script src="js/Input.js"></script>
+<script src="js/Snake.js"></script>
+<script src="js/Food.js"></script>
+<script src="js/Audio.js"></script>
+<script src="js/ParticleSystem.js"></script>
+<script src="js/ThemeManager.js"></script>
+<script src="js/Renderer.js"></script>
+<script src="js/LevelManager.js"></script>
+<script src="js/Economy.js"></script>
+<script src="js/Social.js"></script>
+<script src="js/Tutorial.js"></script>
+<script src="js/Splash.js"></script>
+<script src="js/Game.js"></script>
+<script src="js/UI.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
